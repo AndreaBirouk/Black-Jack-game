@@ -12,7 +12,7 @@ The dealer follows set rules, typically hitting until their hand totals 16 or mo
 The goal is to have a hand higher than the dealer's without going over 21.
 '''
 
-cards = [10,10,10,10,9,8,7,6,5,4,3,2,11]
+cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
 print(card_logo)
 print(blackjack)
@@ -42,8 +42,8 @@ while keep_playing:
         if sum(your_cards) == [10, 11] or sum(your_cards) == [11, 10]:
             print("You win. 🎉 BLACKJACK 🎉 \n")
         elif sum(computers_cards) == [10, 11] or sum(computers_cards) == [11, 10]:
-            print("You win. Opponent has 🎉 BLACKJACK 🎉 \n")
-        elif sum(computers_cards) > 21 and sum(your_cards):
+            print("You lose. Opponent has 🎉 BLACKJACK 🎉 \n")
+        elif sum(computers_cards) > 21 and sum(your_cards) > 21:
             print("Oh no! You both have gone over 21 😱")
         elif sum(your_cards) > sum(computers_cards) and sum(your_cards) < 22:
             print("You win 🥳 \n")
