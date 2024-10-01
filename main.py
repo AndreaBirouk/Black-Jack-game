@@ -1,6 +1,6 @@
 
 import random
-from art import card_logo, blackjack
+from art import card_logo, blackjack, CARDS
 '''
 Blackjack is a popular card game where players try to beat the dealer 
 by having a hand value as close to 21 as possible without exceeding it.
@@ -29,12 +29,12 @@ while keep_playing:
     your_cards = random.choices(cards, k=2)
     computers_cards= random.choices(cards, k=2)
 
+    print(f"    Your cards: {your_cards}, current score: {sum(your_cards)}")
+    
+    print(f"    Computer's first card: {computers_cards[0]}\n")
+
     while sum(computers_cards) < 16:
         computers_cards.append(random.choice(cards))
-
-
-    print(f"    Your cards: {your_cards}, current score: {sum(your_cards)}")
-    print(f"    Computer's first card: {computers_cards[0]}")
 
     should_continue = True
 
@@ -74,20 +74,12 @@ while keep_playing:
             print(f"    Your cards: {your_cards}, current score: {sum(your_cards)}")
             print('\n')
             if sum(your_cards) > 21:
-                # print(f"    Your final hand: {your_cards}, final score: {sum(your_cards)}")
-                # print(f"    Computer's final hand: {computers_cards}, final score: {sum(computers_cards)}")
-                # print('\n')
-                # get_result()
                 get_final_message()
                 should_continue = False
                 
         elif hit_or_stand == 'n' and sum(your_cards) < 16:
             print(" Sorry, you haven't reached total 16, you have to get more cards \n")
         else: 
-            # print(f"    Your final hand: {your_cards}, final score: {sum(your_cards)}")
-            # print(f"    Computer's final hand: {computers_cards}, final score: {sum(computers_cards)}")
-            # print('\n')
-            # get_result()
             get_final_message()
             should_continue = False
 
