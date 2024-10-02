@@ -1,6 +1,6 @@
 
 import random
-from art import card_logo, blackjack, CARDS
+from art import card_logo, blackjack
 '''
 Blackjack is a popular card game where players try to beat the dealer 
 by having a hand value as close to 21 as possible without exceeding it.
@@ -26,8 +26,10 @@ def greeting():
     return game_on_off
 
 while keep_playing:
+
     your_cards = random.choices(cards, k=2)
     computers_cards= random.choices(cards, k=2)
+    
 
     print(f"    Your cards: {your_cards}, current score: {sum(your_cards)}")
     
